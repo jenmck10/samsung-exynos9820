@@ -17,14 +17,14 @@ then
 else
 	dash='-'
 	if [ "x$1" = "x" ]; then
-		nver="$(curl -s https://github.com/topjohnwu/Magisk/releases | grep -m 1 -Poe 'Magisk v[\d\.]+' | cut -d ' ' -f 2)"
-	else
+		nver="$(curl -s https://github.com/jenmck10/samsung-exynos9820/releases | grep -m 1 -Poe 'Magisk v[\d\.]+' | cut -d ' ' -f 2)"
+	else 
 		nver="$1"
 	fi
 	if [ "$nver" = "v26.3" ]; then
 		dash='.'
 	fi
-	magisk_link="https://github.com/topjohnwu/Magisk/releases/download/${nver}/Magisk${dash}${nver}.apk"
+	magisk_link="https://github.com/jenmck10/samsung-exynos9820/releases/download/${nver}/Magisk${dash}${nver}.apk"
 fi
 
 if [ \( -n "$nver" \) -a \( "$nver" != "$ver" \) -o ! \( -f "$DIR/magiskinit" \) -o \( "$nver" = "canary" \) -o \( "$nver" = "alpha" \) ]
